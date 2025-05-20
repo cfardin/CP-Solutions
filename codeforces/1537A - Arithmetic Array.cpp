@@ -1,3 +1,6 @@
+// Codeforces Problem 1537A - Arithmetic Array
+// Problem link : https://codeforces.com/problemset/problem/1537/A
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
