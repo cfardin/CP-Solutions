@@ -1,28 +1,39 @@
 #include<bits/stdc++.h>
-typedef long long ll;
 using namespace std;
-
-
-int main(){
-    ios::sync_with_stdio(false);
-    int t;
-    cin >> t;
-    while(t--){
-        int n, p(1);
-        vector<int> arr;
-        cin >> n;
-
-        while(n > 0){
-            if(n % 10 > 0){
-                arr.push_back((n % 10) * p);
-            }
-            n/=10;
-            p*=10;
-        }
-        cout << arr.size() << endl;
-        for(int i : arr){
-            cout << i << " ";
-        }
+typedef long long ll;
+ 
+void solve(){
+    int n; cin >> n;
+    int x = n;
+    vector<int> a = {10, 100, 1000, 10000};
+    vector<int> v;
+    for(int i=0; i<4; i++){
+        int num = x % a[i];
+        x = x - num;
+        if(num != 0) v.push_back(num);
     }
 
+
+    if(v.empty()){
+        cout << 1 << endl;
+        cout << n;
+    }
+    else{
+        cout << v.size() << endl;
+        for(int i : v){
+            if(i == 0) continue;
+            else cout << i <<" ";
+        }
+    }
+    cout << endl;
+ 
+}
+ 
+int main(){
+    ios :: sync_with_stdio(false);
+    int t; cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
 }
